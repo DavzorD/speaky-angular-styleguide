@@ -58,16 +58,21 @@ The controllerAs syntax uses this inside controllers which gets bound to $scope
 
 **Why?**: Helps avoid the temptation of using $scope methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using $scope in a factory, or if in a controller just when needed. For example when publishing and subscribing events using $emit, $broadcast, or $on consider moving these uses to a factory and invoke from the controller.
 
+```javascript
 /* avoid */
 function Customer($scope) {
     $scope.name = {};
     $scope.sendMessage = function() { };
 }
+```
+
+```javascript
 /* recommended - but see next section */
 function Customer() {
     this.name = {};
     this.sendMessage = function() { };
 }
+```
 
 ### controllerAs with vm
 
