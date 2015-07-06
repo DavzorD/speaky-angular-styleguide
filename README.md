@@ -1,4 +1,4 @@
-**Guidelines refractoring**
+# Guidelines refractoring
 
 Logique dans les services
 Variable avec nom complet ($scope.navigationService = navigationService et pas $scope.ns)
