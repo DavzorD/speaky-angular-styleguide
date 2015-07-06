@@ -15,11 +15,10 @@ var displayNavbar = ns.display
 var isDiplayedNavbar = navbarService.isDisplayed
 ```
 
+## Debugging
+Use *$log* to display info in console.
+Always inject *$log* in JS files. 
 
-Logique dans les services
-Variable avec nom complet ($scope.navigationService = navigationService et pas $scope.ns)
-Retirer les console.log et mettre des $log.debug
-Insérer $log dans chaque controller, service
 
 les box d’help ou trucs visibles qu’on peut show/hide s’appellent 
 vm.isDisplayed.helpMessage (par exemple si c’est un help message), ou bien vm.isDisplayed.helpSelectAMeeting, …
@@ -27,17 +26,14 @@ vm.isDisplayed.helpMessage (par exemple si c’est un help message), ou bien vm.
 
 ## Controllers
 
-controllerAs View Syntax
-
-[Style Y030]
+### controllerAs View Syntax
 
 Use the controllerAs syntax over the classic controller with $scope syntax.
 
-Why?: Controllers are constructed, "newed" up, and provide a single new instance, and the controllerAs syntax is closer to that of a JavaScript constructor than the classic $scope syntax.
+**Why?**: Controllers are constructed, "newed" up, and provide a single new instance, and the controllerAs syntax is closer to that of a JavaScript constructor than the classic $scope syntax.
 
-Why?: It promotes the use of binding to a "dotted" object in the View (e.g. customer.name instead of name), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
+**Why?**: It promotes the use of binding to a "dotted" object in the View (e.g. customer.name instead of name), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
 
-Why?: Helps avoid using $parent calls in Views with nested controllers.
 ```javascript
 <!-- avoid -->
 <div ng-controller="Customer">
@@ -50,17 +46,17 @@ Why?: Helps avoid using $parent calls in Views with nested controllers.
 <div ng-controller="Customer as customer">
     {{ customer.name }}
 </div>
-controllerAs Controller Syntax
 ```
-[Style Y031]
+
+### controllerAs Controller Syntax
 
 Use the controllerAs syntax over the classic controller with $scope syntax.
 
 The controllerAs syntax uses this inside controllers which gets bound to $scope
 
-Why?: controllerAs is syntactic sugar over $scope. You can still bind to the View and still access $scope methods.
+**Why?**: controllerAs is syntactic sugar over $scope. You can still bind to the View and still access $scope methods.
 
-Why?: Helps avoid the temptation of using $scope methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using $scope in a factory, or if in a controller just when needed. For example when publishing and subscribing events using $emit, $broadcast, or $on consider moving these uses to a factory and invoke from the controller.
+**Why?**: Helps avoid the temptation of using $scope methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using $scope in a factory, or if in a controller just when needed. For example when publishing and subscribing events using $emit, $broadcast, or $on consider moving these uses to a factory and invoke from the controller.
 
 /* avoid */
 function Customer($scope) {
@@ -72,13 +68,12 @@ function Customer() {
     this.name = {};
     this.sendMessage = function() { };
 }
-controllerAs with vm
 
-[Style Y032]
+### controllerAs with vm
 
 Use a capture variable for this when using the controllerAs syntax. Choose a consistent variable name such as vm, which stands for ViewModel.
 
-Why?: The this keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of this avoids encountering this problem.
+**Why?**: The this keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of this avoids encountering this problem.
 
 /* avoid */
 function Customer() {
@@ -91,23 +86,8 @@ function Customer() {
     vm.name = {};
     vm.sendMessage = function() { };
 }
-Note: You can avoid any jshint warnings by placing the comment above the line of code. However it is not needed when the function is named using UpperCasing, as this convention means it is a constructor function, which is what a controller is in Angular.
 
-/* jshint validthis: true */
-var vm = this;
-Note: When creating watches in a controller using controller as, you can watch the vm.* member using the following syntax. (Create watches with caution as they add more load to the digest cycle.)
-
-<input ng-model="vm.title"/>
-function SomeController($scope, $log) {
-    var vm = this;
-    vm.title = 'Some Title';
-
-    $scope.$watch('vm.title', function(current, original) {
-        $log.info('vm.title was %s', original);
-        $log.info('vm.title is now %s', current);
-    });
-}
-Bindable Members Up Top
+## Bindable Members Up Top
 
 [Style Y033]
 
