@@ -30,9 +30,9 @@ vm.isDisplayed.helpMessage (par exemple si c’est un help message), ou bien vm.
 
 Use the controllerAs syntax over the classic controller with $scope syntax.
 
-**Why?**: Controllers are constructed, "newed" up, and provide a single new instance, and the controllerAs syntax is closer to that of a JavaScript constructor than the classic $scope syntax.
+**Why?**: Controllers are constructed, "newed" up, and provide a single new instance, and the controllerAs syntax is closer to that of a JavaScript constructor than the classic `$scope` syntax.
 
-**Why?**: It promotes the use of binding to a "dotted" object in the View (e.g. customer.name instead of name), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
+**Why?**: It promotes the use of binding to a "dotted" object in the View (e.g. `customer.name` instead of `name`), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
 
 ```javascript
 <!-- avoid -->
@@ -50,13 +50,13 @@ Use the controllerAs syntax over the classic controller with $scope syntax.
 
 ### controllerAs Controller Syntax
 
-Use the controllerAs syntax over the classic controller with $scope syntax.
+Use the controllerAs syntax over the classic controller with `$scope` syntax.
 
-The controllerAs syntax uses this inside controllers which gets bound to $scope
+The controllerAs syntax uses this inside controllers which gets bound to `$scope`
 
-**Why?**: controllerAs is syntactic sugar over $scope. You can still bind to the View and still access $scope methods.
+**Why?**: controllerAs is syntactic sugar over `$scope`. You can still bind to the View and still access `$scope` methods.
 
-**Why?**: Helps avoid the temptation of using $scope methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using $scope in a factory, or if in a controller just when needed. For example when publishing and subscribing events using $emit, $broadcast, or $on consider moving these uses to a factory and invoke from the controller.
+**Why?**: Helps avoid the temptation of using `$scope` methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using `$scope` in a factory, or if in a controller just when needed. For example when publishing and subscribing events using `$emit`, `$broadcast`, or `$on` consider moving these uses to a factory and invoke from the controller.
 
 ```javascript
 /* avoid */
@@ -76,7 +76,7 @@ function Customer() {
 
 ### controllerAs with vm
 
-Use a capture variable for this when using the controllerAs syntax. Choose a consistent variable name such as vm, which stands for ViewModel.
+Use a capture variable for this when using the controllerAs syntax. Choose a consistent variable name such as `vm`, which stands for ViewModel.
 
 **Why?**: The this keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of this avoids encountering this problem.
 
@@ -94,14 +94,12 @@ function Customer() {
 
 ## Bindable Members Up Top
 
-[Style Y033]
-
 Place bindable members at the top of the controller, alphabetized, and not spread through the controller code.
 
 Why?: Placing bindable members at the top makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View.
 
 Why?: Setting anonymous functions in-line can be easy, but when those functions are more than 1 line of code they can reduce the readability. Defining the functions below the bindable members (the functions will be hoisted) moves the implementation details down, keeps the bindable members up top, and makes it easier to read.
-
+``` javascript
 /* avoid */
 function Sessions() {
     var vm = this;
@@ -117,6 +115,9 @@ function Sessions() {
     };
     vm.sessions = [];
     vm.title = 'Sessions';
+    ```
+
+``` javascript
 /* recommended */
 function Sessions() {
     var vm = this;
@@ -140,6 +141,9 @@ function Sessions() {
     function search() {
       /* */
     }
+    
+    ``` 
+
 Controller Using "Above the Fold"
 
 Note: If the function is a 1 liner consider keeping it right up top, as long as readability is not affected.
