@@ -153,6 +153,7 @@ Controller Using "Above the Fold"
 
 Note: If the function is a 1 liner consider keeping it right up top, as long as readability is not affected.
 
+``` javascript
 /* avoid */
 function Sessions(data) {
     var vm = this;
@@ -170,6 +171,9 @@ function Sessions(data) {
     vm.search = search;
     vm.sessions = [];
     vm.title = 'Sessions';
+``` 
+
+``` 
 /* recommended */
 function Sessions(dataservice) {
     var vm = this;
@@ -179,6 +183,8 @@ function Sessions(dataservice) {
     vm.search = search;
     vm.sessions = [];
     vm.title = 'Sessions';
+``` 
+
     
 https://github.com/airbnb/javascript
 https://github.com/johnpapa/angular-styleguide
