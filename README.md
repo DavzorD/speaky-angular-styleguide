@@ -27,6 +27,9 @@ Why?: Helps avoid using $parent calls in Views with nested controllers.
 <div ng-controller="Customer">
     {{ name }}
 </div>
+```
+
+```javascript
 <!-- recommended -->
 <div ng-controller="Customer as customer">
     {{ customer.name }}
