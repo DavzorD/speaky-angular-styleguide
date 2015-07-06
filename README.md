@@ -1,5 +1,7 @@
 # Speaky - Angular Style Guide
 
+Inspired by https://github.com/johnpapa/angular-styleguide and God.
+
 Logique dans les services
 Variable avec nom complet ($scope.navigationService = navigationService et pas $scope.ns)
 Retirer les console.log et mettre des $log.debug
@@ -9,7 +11,7 @@ les box d’help ou trucs visibles qu’on peut show/hide s’appellent
 vm.isDisplayed.helpMessage (par exemple si c’est un help message), ou bien vm.isDisplayed.helpSelectAMeeting, …
 
 
-Controllers
+## Controllers
 
 controllerAs View Syntax
 
