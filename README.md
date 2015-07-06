@@ -22,7 +22,7 @@ Why?: Controllers are constructed, "newed" up, and provide a single new instance
 Why?: It promotes the use of binding to a "dotted" object in the View (e.g. customer.name instead of name), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
 
 Why?: Helps avoid using $parent calls in Views with nested controllers.
-
+```javascript
 <!-- avoid -->
 <div ng-controller="Customer">
     {{ name }}
@@ -32,7 +32,7 @@ Why?: Helps avoid using $parent calls in Views with nested controllers.
     {{ customer.name }}
 </div>
 controllerAs Controller Syntax
-
+```
 [Style Y031]
 
 Use the controllerAs syntax over the classic controller with $scope syntax.
