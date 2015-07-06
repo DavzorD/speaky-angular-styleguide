@@ -34,14 +34,14 @@ Use the controllerAs syntax over the classic controller with $scope syntax.
 
 **Why?**: It promotes the use of binding to a "dotted" object in the View (e.g. `customer.name` instead of `name`), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
 
-```javascript
+```html
 <!-- avoid -->
 <div ng-controller="Customer">
     {{ name }}
 </div>
 ```
 
-```javascript
+```html
 <!-- recommended -->
 <div ng-controller="Customer as customer">
     {{ customer.name }}
@@ -115,7 +115,7 @@ function Sessions() {
     };
     vm.sessions = [];
     vm.title = 'Sessions';
-    ```
+```
 
 ``` javascript
 /* recommended */
@@ -141,8 +141,7 @@ function Sessions() {
     function search() {
       /* */
     }
-    
-    ``` 
+``` 
 
 Controller Using "Above the Fold"
 
