@@ -1,1 +1,1 @@
-# speaky-angular-styleguide
+# Speaky Angular Styleguide
