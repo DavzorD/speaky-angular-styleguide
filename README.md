@@ -2,6 +2,20 @@
 
 Inspired by https://github.com/johnpapa/angular-styleguide and God.
 
+## Variable names
+
+Always use clear and self-explanatory variable names.
+
+```javascript
+<!-- avoid -->
+var displayNavbar = ns.display
+```
+```javascript
+<!-- recommended -->
+var isDiplayedNavbar = navbarService.isDisplay
+```
+
+
 Logique dans les services
 Variable avec nom complet ($scope.navigationService = navigationService et pas $scope.ns)
 Retirer les console.log et mettre des $log.debug
