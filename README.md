@@ -80,17 +80,22 @@ Use a capture variable for this when using the controllerAs syntax. Choose a con
 
 **Why?**: The this keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of this avoids encountering this problem.
 
+```javascript
 /* avoid */
 function Customer() {
     this.name = {};
     this.sendMessage = function() { };
 }
+```
+
+```javascript
 /* recommended */
 function Customer() {
     var vm = this;
     vm.name = {};
     vm.sendMessage = function() { };
 }
+```
 
 ## Bindable Members Up Top
 
@@ -99,6 +104,7 @@ Place bindable members at the top of the controller, alphabetized, and not sprea
 Why?: Placing bindable members at the top makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View.
 
 Why?: Setting anonymous functions in-line can be easy, but when those functions are more than 1 line of code they can reduce the readability. Defining the functions below the bindable members (the functions will be hoisted) moves the implementation details down, keeps the bindable members up top, and makes it easier to read.
+
 ``` javascript
 /* avoid */
 function Sessions() {
