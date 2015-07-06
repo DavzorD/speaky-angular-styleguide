@@ -12,7 +12,7 @@ var displayNavbar = ns.display
 ```
 ```javascript
 <!-- recommended -->
-var isDiplayedNavbar = navbarService.isDisplay
+var isDiplayedNavbar = navbarService.isDisplayed
 ```
 
 
