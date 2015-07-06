@@ -16,8 +16,8 @@ var isDiplayedNavbar = navbarService.isDisplayed
 ```
 
 ## Debugging
-Use *$log* to display info in console.
-Always inject *$log* in JS files. 
+Use `$log` to display info in console.
+Always inject `$log` in JS files. 
 
 
 les box d’help ou trucs visibles qu’on peut show/hide s’appellent 
