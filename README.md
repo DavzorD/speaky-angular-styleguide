@@ -1,9 +1,9 @@
 Speaky - Angular Style Guide
 ============================
 
-> Style guide used by the speaky team for the desktop application.
+> Style guide used by the Speaky team for the desktop application.
 
- Inspired by https://github.com/johnpapa/angular-styleguide and God.
+> Inspired by https://github.com/johnpapa/angular-styleguide and God.
 
 ## Variable names
 
