@@ -3,11 +3,13 @@ Speaky - Angular Style Guide
 
 > Style guide used by the Speaky team for the desktop application.
 
-> Inspired by https://github.com/johnpapa/angular-styleguide and God.
+######Based on
+https://github.com/airbnb/javascript
+https://github.com/johnpapa/angular-styleguide
 
 ## Variable names
 
-Always use clear and self-explanatory variable names.
+Always use non ambiguous  and self-explanatory variable names.
 
 ```javascript
 <!-- avoid -->
@@ -192,5 +194,4 @@ function Sessions(dataservice) {
 ``` 
 
     
-https://github.com/airbnb/javascript
-https://github.com/johnpapa/angular-styleguide
+
