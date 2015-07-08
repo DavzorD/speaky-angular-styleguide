@@ -1,6 +1,9 @@
-# Speaky - Angular Style Guide
+Speaky - Angular Style Guide
+============================
 
-Inspired by https://github.com/johnpapa/angular-styleguide and God.
+> Style guide used by the speaky team for the desktop application.
+
+ Inspired by https://github.com/johnpapa/angular-styleguide and God.
 
 ## Variable names
 
@@ -23,6 +26,9 @@ Always inject `$log` in JS files.
 les box d’help ou trucs visibles qu’on peut show/hide s’appellent 
 vm.isDisplayed.helpMessage (par exemple si c’est un help message), ou bien vm.isDisplayed.helpSelectAMeeting, …
 
+## Folder structure
+
+*
 
 ## Controllers
 
