@@ -2,10 +2,8 @@ Speaky - Angular Style Guide
 ============================
 
 > Style guide used by the Speaky team for the desktop application.
-
-######Based on
-* https://github.com/airbnb/javascript
-* https://github.com/johnpapa/angular-styleguide
+> * https://github.com/airbnb/javascript
+> * https://github.com/johnpapa/angular-styleguide
 
 ## Variable names
 
